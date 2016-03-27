@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 10px;
+            float: left;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+   <div class="container" id="content">
+       <div class="box">
+           <img src="images/xz01.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz02.jpg"alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz03.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz04.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz05.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz06.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz07.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz08.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz09.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz10.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz11.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz12.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz13.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz14.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz15.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz16.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz17.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz18.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz19.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz20.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz21.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz22.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz23.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz24.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz25.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz26.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz27.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz28.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz29.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz30.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz31.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz32.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz33.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz34.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz35.jpg" alt=""/>
+       </div>
+       <div class="box">
+           <img src="images/xz36.jpg" alt=""/>
+       </div>
+
+   </div>
+   <audio src="music/xz.mp3" autoplay>
+   <script>
+       window.onload = function() {
+           WatterFall("content","box");
+           var content = document.getElementById("content");
+           window.onscroll = function() {
+               if(loading()) {
+                   var json = [
+                       {"src":"xz02.jpg"},
+                       {"src":"xz03.jpg"},
+                       {"src":"xz04.jpg"},
+                       {"src":"xz05.jpg"},
+                       {"src":"xz06.jpg"},
+                       {"src":"xz07.jpg"},
+                       {"src":"xz08.jpg"},
+                       {"src":"xz09.jpg"},
+                       {"src":"xz10.jpg"},
+                       {"src":"xz12.jpg"},
+                       {"src":"xz13.jpg"},
+                       {"src":"xz14.jpg"},
+                       {"src":"xz15.jpg"},
+                       {"src":"xz16.jpg"},
+                       {"src":"xz17.jpg"},
+                       {"src":"xz18.jpg"},
+                       {"src":"xz19.jpg"},
+                       {"src":"xz21.jpg"},
+                       {"src":"xz22.jpg"},
+                       {"src":"xz23.jpg"},
+                       {"src":"xz24.jpg"},
+                       {"src":"xz25.jpg"},
+                       {"src":"xz26.jpg"},
+                       {"src":"xz27.jpg"},
+                       {"src":"xz28.jpg"},
+                       {"src":"xz29.jpg"},
+                       {"src":"xz30.jpg"},
+                       {"src":"xz31.jpg"},
+                       {"src":"xz32.jpg"},
+                       {"src":"xz33.jpg"},
+                       {"src":"xz34.jpg"},
+                       {"src":"xz35.jpg"},
+                       {"src":"xz36.jpg"},
+                   ];
+                   for(var i=0;i<json.length;i++) {
+                       var box = document.createElement("div");
+                       box.className = "box";
+                       content.appendChild(box);
+                       var img = document.createElement("img");
+                       img.src = "images/" + json[i].src;
+                       box.appendChild(img);
+                   }
+                   WatterFall("content","box");
+               }
+           }
+       }
+       function WatterFall(parent,children) {
+           var eleId = document.getElementById(parent);
+           var boxs = eleId.children;
+           var boxwidth = boxs[0].offsetWidth;
+           var column = Math.floor(document.documentElement.clientWidth/boxwidth);
+           var arrHeight = [];
+           for(var i=0;i<boxs.length;i++) {
+               if(i<column) {
+                   arrHeight[i] = boxs[i].offsetHeight;
+               }
+               else {
+                   var minHeight = Math.min.apply("",arrHeight);
+                   var minIndex = minHeightImgIndex(minHeight);
+                   boxs[i].style.position = "absolute";
+                   boxs[i].style.top = minHeight + 2 + "px";
+                   boxs[i].style.left = boxs[minIndex].offsetLeft -10 + "px";
+                   arrHeight[minIndex] = arrHeight[minIndex] + boxs[i].offsetHeight;
+               }
+           }
+           function minHeightImgIndex(height) {
+               for(var k in arrHeight) {
+                   if(arrHeight[k] == height) {
+                       return k;
+                   }
+               }
+           }
+       }
+       function loading() {
+           var content = document.getElementById("content");
+           var boxs = content.children;
+           var lastbox = boxs[boxs.length-1];
+           var lastboxTop = lastbox.offsetTop;
+           var clientHeight = document.documentElement.clientHeight;
+           var scroolTop = document.documentElement.scrollTop || document.body.scrollTop;
+           if(lastboxTop < clientHeight + scroolTop) {
+               return true;
+           }
+       }
+   </script>
+</body>
+</html>

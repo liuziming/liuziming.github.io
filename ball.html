@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人技能</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #080e24 url(images/ballbg.jpg) repeat;
+			background-size: contain;
+			overflow: hidden;
+		}
+		audio {
+			position: absolute;
+			bottom: 10px;
+			right: 60px;
+		}
+		div{
+			position: absolute;
+			right: 50px;
+			width: 600px;
+			height: 700px;
+		}
+
+		ul {
+			width: 600px;
+			height: 600px;
+			position: relative;
+			list-style: none;
+			float: left;
+		}
+
+		ul li {
+			border: 2px solid #394057;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			box-sizing: border-box;
+
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			animation-name: orbit;
+		}
+
+		ul li span {
+			display: block;
+			position: absolute;
+			left: 0;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+		}
+
+		ul li:nth-child(1) {
+			width: 60px;
+			height: 60px;
+			border: none;
+			box-shadow: 0 0 50px #c90;
+			background-color: #C90;
+			animation-duration: 5s;
+		}
+
+		ul li:nth-child(2) {
+			width: 120px;
+			height: 120px;
+			animation-duration: 6s;
+		}
+
+		ul li:nth-child(2) span {
+			background-color: yellow;
+			left: 80px;
+			top: 0;
+		}
+
+		ul li:nth-child(3) {
+			width: 180px;
+			height: 180px;
+			animation-duration: 10s;
+		}
+
+		ul li:nth-child(3) span {
+			background-color: blue;
+			left: 47px;
+			top: 0;
+		}
+
+		ul li:nth-child(4) {
+			width: 240px;
+			height: 240px;
+			animation-duration: 12s;
+		}
+
+		ul li:nth-child(4) > span {
+			background-color: green;
+			left: 209px;
+			top: 43px;
+			animation: orbit 2s infinite linear;
+		}
+
+		ul li:nth-child(4) > span span {
+			width: 6px;
+			height: 6px;
+			left: 16px;
+			background-color: yellow;
+		}
+
+		ul li:nth-child(5) {
+			width: 300px;
+			height: 300px;
+			background-image: url(images/asteroids_meteorids.png);
+			background-size: cover;
+			animation-duration: 25s;
+		}
+
+		ul li:nth-child(5) span {
+			background-color: red;
+			left: 95px;
+			top: 0;
+		}
+
+		ul li:nth-child(6) {
+			width: 360px;
+			height: 360px;
+			animation-duration: 20s;
+		}
+
+		ul li:nth-child(6) span {
+			background-color: #CCC;
+			left: -5px;
+			top: 200px;
+		}
+
+		ul li:nth-child(7) {
+			width: 420px;
+			height: 420px;
+			animation-duration: 30s;
+		}
+
+		ul li:nth-child(7) > span {
+			background-color: green;
+			left: 300px;
+			top: 18px;
+		}
+
+		ul li:nth-child(7) > span span {
+			width: 15px;
+			height: 15px;
+			border: 2px solid #CCC;
+			left: -4px;
+			top: -4px;
+			transform: skew(0, 45deg);
+		}
+
+		ul li:nth-child(8) {
+			width: 480px;
+			height: 480px;
+			animation-duration: 35s;
+		}
+
+		ul li:nth-child(8) span {
+			background-color: pink;
+			left: 0;
+			top: 170px;
+		}
+
+		ul li:nth-child(9) {
+			width: 540px;
+			height: 540px;
+			animation-duration: 40s;
+		}
+
+		ul li:nth-child(9) span {
+			background-color: blue;
+			left: 47px;
+			top: 100px;
+		}
+
+		ul li:nth-child(10) {
+			width: 600px;
+			height: 600px;
+			animation-duration: 45s;
+		}
+
+		ul li:nth-child(10) span {
+			background-color: yellow;
+			left: 224px;
+			top: 0;
+		}
+
+		@keyframes orbit {
+			0% {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+
+			100% {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"></div>
+		<audio src="music/heart.mp3"  controls autoplay loop preload>
+  </audio>
+	<ul>
+		<li></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span><span></span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span><span></span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+	</ul>
+  <script src="js/konva.js"></script>
+  <script src='js/SelfGroup.js'></script>
+  <script>
+    var width = window.innerWidth/2;
+    var height = window.innerHeight;
+    var stage = new Konva.Stage({
+      container: 'demo',
+      width: width,
+      height: height
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+    var cenX = width /2;
+    var cenY = height/2;
+    var outCircle1 = new Konva.Circle({
+      x: cenX,
+      y: cenY,
+      radius: 215,
+      stroke: "#E0E4EE",
+      dash: [4, 4]
+    });
+    layer.add(outCircle1);
+
+    var outCircle2 = new Konva.Circle({
+      x: cenX,
+      y: cenY,
+      radius: 137,
+      stroke: "#E0E4EE",
+      dash: [4, 4]
+    });
+    layer.add(outCircle2);
+
+    var outCircle3 = new Konva.Circle({
+      x: cenX,
+      y: cenY,
+      radius: 126,
+      stroke: "#2A3466",
+      dash: [8, 4]
+    });
+    layer.add(outCircle3);
+
+    var innerRing = new Konva.Ring({
+      x: cenX,
+      y: cenY,
+      outerRadius: 90,
+      innerRadius: 65,
+      fill: 'black',
+      opacity: 0.1
+    });
+    layer.add(innerRing);
+
+    var innerCircle = new Konva.Circle({
+      x: cenX,
+      y: cenY,
+      radius: 65,
+      fill: "#2A3466"
+    });
+    layer.add(innerCircle);
+
+    var innerText = new Konva.Text({
+      x: cenX - innerCircle.radius(),
+      y: cenY - 10,
+      width: innerCircle.radius() * 2,
+      text: '专业技能',
+      fontStyle:'bold',
+      fontFamily:'Helvetica',
+      fontSize: 20,
+      fill: '#fff',
+      align: 'center'
+    });
+    layer.add(innerText);
+
+    var outGroup = new Konva.Group({
+      x: cenX,
+      y: cenY
+    });
+    layer.add(outGroup);
+
+    var inR = 50;
+    var ouR = 39;
+
+    var outgroup1 = new SelfGroup({
+      x: 215 * Math.cos(0 * Math.PI / 180),
+      y: 215 * Math.sin(0 * Math.PI / 180),
+      innerRadius: ouR,
+      outerRadius: inR,
+      innerFill: '#FFD9EC',
+      outerFill: '#81C0C0',
+      fontStyle:'bold',
+      text: 'JavaScript',
+      textColor: "#F00078",
+      fontSize: 16,
+    });
+    outgroup1.render();
+    outgroup1.addToGroupOrLayer(outGroup);
+
+    var outgroup2 = new SelfGroup({
+      x: 215 * Math.cos(72 * Math.PI / 180),
+      y: 215 * Math.sin(72 * Math.PI / 180),
+      innerRadius: ouR,
+      outerRadius: inR,
+      innerFill: '#00EEEE',
+      outerFill: '#81C0C0',
+      text: 'html',
+      textColor: "#fff",
+      fontStyle:'bold',
+      fontSize: 20,
+      align: 'center'
+    });
+    outgroup2.render();
+    outgroup2.addToGroupOrLayer(outGroup);
+
+    var outgroup3 = new SelfGroup({
+      x: 215 * Math.cos(72 * 2 * Math.PI / 180),
+      y: 215 * Math.sin(72 * 2 * Math.PI / 180),
+      innerRadius: ouR,
+      outerRadius: inR,
+      innerFill: '#B7FF4A',
+      outerFill: '#81C0C0',
+      text: 'canvas',
+      textColor: "#81C0C0",
+      fontSize: 20
+    });
+    outgroup3.render();
+    outgroup3.addToGroupOrLayer(outGroup);
+
+    var outgroup4 = new SelfGroup({
+      x: 215 * Math.cos(72 * 3 * Math.PI / 180),
+      y: 215 * Math.sin(72 * 3 * Math.PI / 180),
+      innerRadius: ouR,
+      outerRadius: inR,
+      innerFill: '#BE77FF',
+      outerFill: '#81C0C0',
+      text: 'bootstrap',
+      textColor: "#000",
+      fontSize: 18
+    });
+    outgroup4.render();
+    outgroup4.addToGroupOrLayer(outGroup);
+
+    var outgroup5 = new SelfGroup({
+      x: 215 * Math.cos(72 * 4 * Math.PI / 180),
+      y: 215 * Math.sin(72 * 4 * Math.PI / 180),
+      innerRadius: ouR,
+      outerRadius: inR,
+      innerFill: '#8E8E8E',
+      outerFill: '#81C0C0',
+      text: 'Node.js',
+      textColor: "#FFD2D2",
+      fontSize: 20
+    });
+    outgroup5.render();
+    outgroup5.addToGroupOrLayer(outGroup);
+
+    var innerGroup = new Konva.Group({
+      x: cenX,
+      y: cenY
+    });
+    layer.add(innerGroup);
+
+    var innergroup1 = new SelfGroup({
+      x: 126 * Math.cos(0 * Math.PI / 180),
+      y: 126 * Math.sin(0 * Math.PI / 180),
+      innerRadius: ouR / 3 * 2,
+      outerRadius: inR / 3 * 2,
+      innerFill: '#F9F900',
+      outerFill: '#D3FF93',
+      text: 'JQuery',
+      textColor: "#F00078",
+      fontSize: 16
+    });
+    innergroup1.render();
+    innergroup1.addToGroupOrLayer(innerGroup);
+
+    var innergroup2 = new SelfGroup({
+      x: 126 * Math.cos(90 * Math.PI / 180),
+      y: 126 * Math.sin(90 * Math.PI / 180),
+      innerRadius: ouR / 3 * 2,
+      outerRadius: inR / 3 * 2,
+      innerFill: '#FF5809',
+      outerFill: '#D3FF93',
+      text: 'HTML5',
+      textColor: "#fff",
+      fontSize: 14
+    });
+    innergroup2.render();
+    innergroup2.addToGroupOrLayer(innerGroup);
+
+    var innergroup3 = new SelfGroup({
+      x: 126 * Math.cos(90 * 2 * Math.PI / 180),
+      y: 126 * Math.sin(90 * 2 * Math.PI / 180),
+      innerRadius: ouR / 3 * 2,
+      outerRadius: inR / 3 * 2,
+      innerFill: '#7B7B7B',
+      outerFill: '#D3FF93',
+      text: 'Ajax',
+      textColor: "#93FF93",
+      fontSize: 20
+    });
+    innergroup3.render();
+    innergroup3.addToGroupOrLayer(innerGroup);
+
+    var innergroup4 = new SelfGroup({
+      x: 126 * Math.cos(90 * 3 * Math.PI / 180),
+      y: 126 * Math.sin(90 * 3 * Math.PI / 180),
+      innerRadius: ouR / 3 * 2,
+      outerRadius: inR / 3 * 2,
+      innerFill: '#1562D3',
+      outerFill: '#D3FF93',
+      text: 'CSS3',
+      textColor: "#fff",
+      fontSize: 18
+    });
+    innergroup4.render();
+    innergroup4.addToGroupOrLayer(innerGroup);
+
+    layer.draw();
+
+    var angle = 100;
+    var animation = new Konva.Animation(function(frame) {
+      var rotateAngle = frame.timeDiff * angle / 1000;
+      outGroup.rotate(rotateAngle);
+      var outArr = outGroup.getChildren();
+      for (var i = 0; i < outArr.length; i++) {
+        outArr[i].rotate(-rotateAngle);
+      };
+      innerGroup.rotate(-rotateAngle);
+      var innerArr = innerGroup.getChildren();
+      for (var i = 0; i < innerArr.length; i++) {
+        innerArr[i].rotate(rotateAngle);
+      }
+    }, layer);
+    animation.start();
+    layer.addEventListener('mouseenter', function() {
+      angle = 10;
+    });
+    layer.addEventListener('mouseleave', function() {
+      angle = 100;
+    });
+  </script>
+</body>
+</html>
