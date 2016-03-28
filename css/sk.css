@@ -308,11 +308,16 @@ s, i, em {
     color: #fff;
     font: normal 14px/32px "microsoft yahei";
 }
+.dropdown-con{
+    height: 402px;
+    position: relative;
+    z-index: 10;
+}
 .dropdown-con ul li.con-list {
     width: 162px;
-    height: 40px;
+    height: 37px;
     padding: 10px 0 10px 18px;
-    display: none;
+    /*display: none;*/
     position: relative;
 }
 .dropdown-con ul li.con-list .con-left .con-left-a {
@@ -349,8 +354,9 @@ s, i, em {
 
 .dropdown-con .con-right {
     width: 344px;
-    height: 447px;
+    height: 400px;
     border: 1px solid #423972;
+    border-bottom: none;
     border-left: 0;
     position: absolute;
     background: #fff;
@@ -756,6 +762,9 @@ s, i, em {
     background-color: rgba(0,0,0,0.4);
     cursor: pointer;
     text-indent: -999em;
+}
+.arro .current{
+    background-color: blue;
 }
 
 /*Footer*/

@@ -19,13 +19,10 @@ $(function() {
     $(window).scroll(function() {
         var scrollTop = $(document).scrollTop();
         //console.log($(".Footer").offset().top);
-        //console.log(scrollTop);
-        if(scrollTop > 10070) {
+        // console.log(scrollTop);
+        if(scrollTop > 2400) {
             $(".ftmap").animate({left: 688},500);
         }
-       /* else {
-            $(".ftmap").animate({left: 0},500);
-        }*/
     });
     var text = document.getElementById("Header_search_input");
     text.onclick = function() {
@@ -41,6 +38,21 @@ $(function() {
         }
     }
     // 二级下拉菜单
+
+    // 鼠标移到title出现下拉菜单
+//     var lisLen =  $(".dropdown-con ul li.con-list").length;
+//     $(".Header-dropdown").hover(function(){
+//         $(".dropdown-con").children().children().show();
+
+//     }  ,function(){
+//         $(".dropdown-con > ul > li").hide();
+// //
+//     });
+//
+    for(var i=0; i<6; i++){
+        $(".dropdown-ul").append($(".dropdown-ul .con-list:eq(0)").clone());
+    }
+
     $(".dropdown-con>ul>li:odd").css({
         "background":"#392F6B",
         "border": "1px solid #392F6B",
@@ -51,22 +63,14 @@ $(function() {
         "border": "1px solid #463B7F",
         "border-right": "0"
     });
-    // 鼠标移到title出现下拉菜单
-    var lisLen =  $(".dropdown-con ul li.con-list").length;
-    $(".Header-dropdown").hover(function(){
-        $(".dropdown-con").children().children().show();
 
-    }  ,function(){
-        $(".dropdown-con > ul > li").hide();
-//
-    });
-
+// 二级菜单动画
     $(".dropdown-con > ul > li").hover(function () {
         $(this).addClass("current");
-        $(this).find(".con-right").show();
+        $(this).find(".con-right").css("top",$(this).index()*-59+"px").slideDown(500);
     }, function () {
         $(this).removeClass("current");
-        $(this).find(".con-right").hide();
+        $(this).find(".con-right").fadeOut(200);
     });
 
     for(var i=0; i<7; i++){
@@ -141,12 +145,46 @@ $(function() {
         $(".pro-show").stop().hide(1000);
     });
 
-     $(".arro span").mouseenter(function () {
-        $(this).addClass("current").siblings().removeClass("current");
-        var index = $(this).index();
-        $(".top-img ul li").eq(index).fadeIn().siblings().fadeOut();
 
+// 轮播图
+    //  $(".arro span").mouseenter(function () {
+    //     $(this).addClass("current").siblings().removeClass("current");
+    //     var index = $(this).index();
+    //     $(".top-img ul li").eq(index).fadeIn().siblings().fadeOut();
+    // });
+
+    var index = 0;
+  $(".arro span").on("mouseenter",function () {
+    // 保存小圆点索引号到index中
+    index = $(this).index();
+    fadeSlide(".top-img ul li",".arro span",index);
+  });
+    //制作定时器
+    var timer = setInterval(autoplay,2000);
+    function autoplay() {
+       index ++;
+       if (index > 4) {
+         index = 0
+       }
+    fadeSlide(".top-img ul li",".arro span",index);
+    };
+    // 鼠标移出移入开启和清除定时器;|
+    $(".top-img").on("mouseenter",function() {
+       clearInterval(timer);
     });
+    $(".top-img").on("mouseleave",function() {
+       timer = setInterval(autoplay,2000);
+    });
+
+    // 封装淡入淡出轮播图切换效果
+    function fadeSlide(imgName,arrowImg,index) {
+      // 切换图片
+      $(imgName).fadeOut();
+      $(imgName).eq(index).fadeIn();
+      // 切换小圆点
+      $(arrowImg).removeClass("current");
+      $(arrowImg).eq(index).addClass("current");
+    };
 
 })
 
