@@ -1,14 +1,7 @@
-/*
- * @Author: iceStone
- * @Date:   2015-12-05 21:48:05
- * @Last Modified by:   iceStone
- * @Last Modified time: 2015-12-11 17:41:49
- */
 
 'use strict';
 
 $(function() {
-
 
   function resize() {
     // 屏幕宽度
@@ -68,6 +61,10 @@ $(function() {
     });
   });
 
+    var timer = setInterval(autoplay,2000);
+    function autoplay(){
+9
+    }
   $(window).on('resize', resize).trigger('resize');
 
   // 提示框效果

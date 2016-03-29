@@ -2,7 +2,7 @@
 * @Author: iceStone
 * @Date:   2015-12-05 21:48:40
 * @Last Modified by:   流年
-* @Last Modified time: 2016-03-28 10:55:05
+* @Last Modified time: 2016-03-29 16:47:30
 */
 
 body {
@@ -31,7 +31,7 @@ body {
 .navbar-itcast .navbar-brand:hover,
 .navbar-itcast .navbar-brand:focus {
   color: #5e5e5e;
-  background-color: transparent;
+  /*background-color: transparent;*/
 }
 
 .navbar-itcast .navbar-text {
@@ -40,7 +40,7 @@ body {
 
 .navbar-itcast .navbar-nav > li > a {
   color: #878787;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 38px;
 }
 
@@ -50,21 +50,38 @@ body {
     font-size: 1.6rem;
   }
 }*/
+.navbar-itcast .navbar-nav .nav-demo{
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  width: 60px;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #86D0B5;
+}
+
+.navbar-itcast .navbar-nav > li i{
+  display: inline-block;
+  position: absolute;
+  top: 27px;
+  width: 1px;
+  height: 12px;
+  background-color: #ccc;
+}
 
 .navbar-itcast .navbar-nav > li > a:hover,
-.navbar-itcast .navbar-nav > li > a:focus {
+.navbar-itcast .navbar-nav > li > a:focus{
   color: #424242;
-  background-color: transparent;
-  border-bottom: 2px solid #e9232c;
+  /*background-color: #86D0B5;*/
 }
 
-.navbar-itcast .navbar-nav > .active > a,
+/*.navbar-itcast .navbar-nav > .active > a,
 .navbar-itcast .navbar-nav > .active > a:hover,
-.navbar-itcast .navbar-nav > .active > a:focus {
+.navbar-itcast .navbar-nav > .active > a:focus{
   color: #424242;
-  background-color: #fff;
-  border-bottom: 2px solid #e9232c;
-}
+  background-color: #86D0B5;
+}*/
 
 .navbar-itcast .navbar-nav > .disabled > a,
 .navbar-itcast .navbar-nav > .disabled > a:hover,
@@ -78,7 +95,13 @@ body {
   margin-top: 18px;
   margin-bottom: 18px;
 }
+#home_slide .carousel-indicators li {
+  background-color: #ccc;
+}
 
+#home_slide .carousel-indicators .active{
+  background-color: #86D0B5;
+}
 .navbar-itcast .navbar-toggle:hover,
 .navbar-itcast .navbar-toggle:focus {
   background-color: #ddd;
@@ -324,7 +347,13 @@ fieldset[disabled] .btn-register.active {
 .topbar {
   font-size: 10px;
 }
+.top-login{
+  color: #FB6E27;
+}
+.topbar .top-bar{
+  margin: 0 8px;
 
+}
 .topbar .tb-1 > a {
   text-decoration: none;
   position: relative;
@@ -349,7 +378,7 @@ fieldset[disabled] .btn-register.active {
 }
 
 .topbar .row > div + div {
-  border-left: 1px solid #e0e0e0;
+  /*border-left: 1px solid #e0e0e0;*/
 }
 
 

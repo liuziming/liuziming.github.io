@@ -49,7 +49,7 @@ window.onload = function() {
     }
     wrap.onmouseout = function() {  // 鼠标离开 隐藏三角
         animate(arrow,{opacity:0});
-        timer = setInterval(autoplay,2000);
+        timer = setInterval(autoplay,3000);
     }
     move(); // 页面执行也调用一次
     // 两个按钮
@@ -78,7 +78,7 @@ window.onload = function() {
             }
         }
     }
-    var timer = setInterval(autoplay,2000);
+    var timer = setInterval(autoplay,3000);
     function autoplay(){
         move(true);
         flag = false;

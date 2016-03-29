@@ -160,7 +160,7 @@ $(function() {
     fadeSlide(".top-img ul li",".arro span",index);
   });
     //制作定时器
-    var timer = setInterval(autoplay,2000);
+    var timer = setInterval(autoplay,2500);
     function autoplay() {
        index ++;
        if (index > 4) {
@@ -173,7 +173,7 @@ $(function() {
        clearInterval(timer);
     });
     $(".top-img").on("mouseleave",function() {
-       timer = setInterval(autoplay,2000);
+       timer = setInterval(autoplay,2500);
     });
 
     // 封装淡入淡出轮播图切换效果

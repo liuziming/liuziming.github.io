@@ -10,12 +10,21 @@
             padding: 0;
         }
         .box {
+            position: relative;
             border: 1px solid #ccc;
             padding: 5px;
             margin: 10px;
             float: left;
-            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
         }
+        /*button{
+          position: relative;
+          width: 192px;
+          height: 40px;
+          text-align: center;
+          color: #E800E8;
+          font: 600 20px/40px "楷体";
+        }*/
     </style>
 </head>
 <body>
@@ -89,7 +98,7 @@
        <div class="box">
            <img src="images/xz23.jpg" alt=""/>
        </div>
-       <div class="box">
+       <!-- <div class="box">
            <img src="images/xz24.jpg" alt=""/>
        </div>
        <div class="box">
@@ -97,8 +106,8 @@
        </div>
        <div class="box">
            <img src="images/xz26.jpg" alt=""/>
-       </div>
-       <div class="box">
+       </div> -->
+       <!-- <div class="box">
            <img src="images/xz27.jpg" alt=""/>
        </div>
        <div class="box">
@@ -127,9 +136,10 @@
        </div>
        <div class="box">
            <img src="images/xz36.jpg" alt=""/>
-       </div>
-
+       </div> -->
    </div>
+       <!-- <button id="btn">点击加载更多...</button> -->
+
    <audio src="music/xz.mp3" autoplay>
    <script>
        window.onload = function() {
@@ -185,6 +195,7 @@
            }
        }
        function WatterFall(parent,children) {
+           var btn = document.getElementById("btn");
            var eleId = document.getElementById(parent);
            var boxs = eleId.children;
            var boxwidth = boxs[0].offsetWidth;
@@ -200,9 +211,57 @@
                    boxs[i].style.position = "absolute";
                    boxs[i].style.top = minHeight + 2 + "px";
                    boxs[i].style.left = boxs[minIndex].offsetLeft -10 + "px";
+                   // btn.style.top = arrHeight[minIndex] + "px";
                    arrHeight[minIndex] = arrHeight[minIndex] + boxs[i].offsetHeight;
                }
            }
+           // btn.onclick = function(){
+           //  var json = [
+           //             {"src":"xz02.jpg"},
+           //             {"src":"xz03.jpg"},
+           //             {"src":"xz04.jpg"},
+           //             {"src":"xz05.jpg"},
+           //             {"src":"xz06.jpg"},
+           //             {"src":"xz07.jpg"},
+           //             {"src":"xz08.jpg"},
+           //             {"src":"xz09.jpg"},
+           //             {"src":"xz10.jpg"},
+           //             {"src":"xz12.jpg"},
+           //             {"src":"xz13.jpg"},
+           //             {"src":"xz14.jpg"},
+           //             {"src":"xz15.jpg"},
+           //             {"src":"xz16.jpg"},
+           //             {"src":"xz17.jpg"},
+           //             {"src":"xz18.jpg"},
+           //             {"src":"xz19.jpg"},
+           //             {"src":"xz21.jpg"},
+           //             {"src":"xz22.jpg"},
+           //             {"src":"xz23.jpg"},
+           //             {"src":"xz24.jpg"},
+           //             {"src":"xz25.jpg"},
+           //             {"src":"xz26.jpg"},
+           //             {"src":"xz27.jpg"},
+           //             {"src":"xz28.jpg"},
+           //             {"src":"xz29.jpg"},
+           //             {"src":"xz30.jpg"},
+           //             {"src":"xz31.jpg"},
+           //             {"src":"xz32.jpg"},
+           //             {"src":"xz33.jpg"},
+           //             {"src":"xz34.jpg"},
+           //             {"src":"xz35.jpg"},
+           //             {"src":"xz36.jpg"},
+           //         ];
+           //         for(var i=0;i<json.length;i++) {
+           //             var box = document.createElement("div");
+           //             box.className = "box";
+           //             content.appendChild(box);
+           //             var img = document.createElement("img");
+           //             img.src = "images/" + json[i].src;
+           //             box.appendChild(img);
+           //         }
+           //         WatterFall("content","box");
+           // }
+
            function minHeightImgIndex(height) {
                for(var k in arrHeight) {
                    if(arrHeight[k] == height) {
