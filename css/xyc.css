@@ -2,7 +2,7 @@
 * @Author: iceStone
 * @Date:   2015-12-05 21:48:40
 * @Last Modified by:   流年
-* @Last Modified time: 2016-03-30 01:00:32
+* @Last Modified time: 2016-03-30 01:34:43
 */
 
 body {
@@ -483,7 +483,28 @@ i {
     color: #6b96c3;
     font-size: 16px;
 }
+#features .inright{
+  height: 100px;
+  padding: 10px 0;
+}
 
+#features .inright li {
+  float: left;
+  margin-right: 30px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+#features .inright li strong {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+#features .inright li p {
+  margin-top: -70px;
+  text-align: right;
+}
 /**
  * 预约
  */
@@ -686,7 +707,14 @@ i {
   margin-bottom: 5px;
 }
 
+/*
+ *回款
+ */
 
+#huikuan .tit{
+  font-size: 16px;
+  color:#3a9775;
+}
 /**
  * 新闻板块
  */
