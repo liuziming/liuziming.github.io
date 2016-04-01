@@ -1,25 +1,4 @@
-var demo = document.getElementById("demos");
-var skip = document.getElementById("skip");
-var body = document.body;
-body.style.overflow = "hidden";
-var num = 5;
-goIndexPage();
-function goIndexPage() {
-  demo.onclick = function () {
-    skip.style.display = "none";
-    body.style.overflow = "auto";
-  }
-  demo.innerHTML = num + "秒后进入小米网</a>";
-  num--;
-  if (num >= 0) {
-    setTimeout(goIndexPage, 1000);  // 从新调用自己
-  }
-  else {
-    body.style.overflow = "auto";
-    skip.style.display = "none";
-    // window.location.href = "http://liuziming.github.io/xiaomi.html";
-  }
-}
+
 $(function () {
   $("nav li:first").css("borderTop", "1px dashed #00E3E3");
   $("nav li").append("<ins></ins>");
