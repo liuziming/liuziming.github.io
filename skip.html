@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>欢迎来到小米网</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      #skip {
+        height: 643px;
+        position: relative;
+        background: url(images/misk.jpg) center 0;
+      }
+      .mifan {
+        position: absolute;
+        top: 0;
+        left: 75px;
+      }
+      .mifans {
+        position: absolute;
+        top: 150px;
+        left: 270px;
+      }
+      #demos {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+      }
+      #demos a {
+        color: #FF6C02;
+        font: 500 20px "simSun";
+        text-decoration: none;
+      }
+      #demos:hover a{
+        color: #f40;
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+<div id="skip">
+  <img src="images/mifan.png" alt="" class="mifan">
+  <img src="images/mifans.png" height="210" width="844" alt="" class="mifans">
+  <div id="demos"></div>
+</div>
+</body>
+</html>
+<script>
+    var demo = document.getElementById("demos");
+    var num = 3;
+    goIndexPage();
+    function goIndexPage() {
+        demo.innerHTML = "<a href ='http://liuziming.github.io/xiaomi.html'>"+num+"秒后进入小米网</a>";
+        num--;
+        if(num >= 0) {
+            setTimeout(goIndexPage,1000);  // 从新调用自己
+        }
+        else {
+            window.location.href = "http://liuziming.github.io/xiaomi.html";
+            // BOM  js 页面 跳转语法
+        }
+    }
+</script>

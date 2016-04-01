@@ -1,0 +1,480 @@
+/*
+* @Author: 流年
+* @Date:   2016-03-30 21:58:41
+* @Last Modified by:   Mine
+* @Last Modified time: 2016-04-01 20:04:20
+*/
+/*
+ * CSS初始化
+ */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {      /*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;       /*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止多行文本框拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;      /*合并外边线*/
+}
+
+
+body {
+    font: 14px / 1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    height: 643px;
+}
+
+a {
+  text-decoration: none;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+.w {
+  width: 1226px;
+  margin: 0 auto;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* music S*/
+#music nav{
+      width: 40px;
+      height:35px;
+      position: fixed;
+      top: 200px;
+      right: 0px;
+      z-index: 90;
+  }
+#music nav li{
+      width: 40px;
+      height:35px;
+      border-right:1px dashed #00E3E3;
+      border-bottom:1px dashed #00DB00;
+      font: 600 16px/35px "simSun";
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+  }
+#music nav li ins{
+      position: absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      background-color: pink;
+      z-index: -1;
+  }
+/* music S*/
+
+
+/* header S */
+#header .top-bar{
+    position: relative;
+    z-index: 30;
+    height: 40px;
+    font-size: 12px;
+    color: #b0b0b0;
+    background: #333;
+}
+#header .top-bar .w{
+  height: 40px;
+}
+
+#header .top-bar a {
+  color: #b0b0b0;
+  padding: 0 7px;
+  text-align: center;
+}
+
+#header .top-bar a:hover {
+  color: #fff;
+}
+
+#header .top-bar li {
+    height: 40px;
+    line-height: 40px;
+}
+
+#header .top-bar li i {
+  position: absolute;
+  top: 15px;
+  width: 1px;
+  height: 10px;
+  background-color: #424242;
+}
+
+#header .top-bar .fr{
+  margin-right: 2px;
+}
+#header .top-bar .fr .shortcat{
+  background-color: #424242;
+  display: inline-block;
+  width: 100px;
+}
+#header .top-bar .fr .shortcat:hover {
+  background-color: #fff;
+  color: #FF6700;
+}
+#header .top-nav {
+  height: 100px;
+}
+#header .top-nav .navmi{
+  margin-top: 20px;
+}
+#header .top-nav ul {
+  margin-left: 180px;
+  height: 100px;
+  line-height: 75px;
+}
+
+#header .top-nav ul a {
+  color: #333333;
+  padding: 15px;
+  font-size: 16px;
+  display:inline-block;
+}
+
+#header .top-nav ul a:hover{
+  color: #FF6700;
+}
+
+#header .top-nav input {
+  position: absolute;
+    top: 65px;
+    right: 122px;
+    z-index: 1;
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 12px;
+    color: #ccc;
+    line-height: 48px;
+}
+
+#header .top-nav > div > ul li{
+  height: 100px;
+}
+
+#header .top-nav .seach{
+  position: absolute;
+  top: 64px;
+  right: 70px;
+}
+
+#header .top-nav .seach:hover {
+  background-color: #FF6700;
+}
+
+#header .top-product .pro{
+  color: #3B3B3B;
+}
+
+#header .top-nav .top-product li{
+  padding: 0 20px;
+  float: left;
+  background-color: #fff;
+}
+
+#header .top-nav .top-product li i{
+  width: 1px;
+  height: 100px;
+  margin-left: -20px;
+  position: absolute;
+  top: 36px;
+  background-color: #E0E0E0;
+}
+
+#header .top-nav .top-product li img {
+  margin: 30px 0;
+}
+
+#header .top-nav .top-product li p {
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+ .top-nav .top-product {
+  display: none;
+  background-color: #fff;
+ }
+
+#header .top-nav ul a ul {
+  border-top: 1px solid #ccc;
+  position: absolute;
+  left: -120px;
+  z-index: 999;
+}
+
+/* header E*/
+
+/* slider S*/
+#slider .dropdown{
+  z-index: 99;
+  color: #fff;
+  font-size: 14px;
+  width: 240px;
+  height: 460px;
+  position: absolute;
+  top: 140px;
+  background-color: rgba(0,0,0,0.6);
+}
+
+#slider .dropdown span {
+  float: right;
+  font: 600 16px/20px "simSun"
+}
+
+#slider .dropdown .drop-item-list{
+  position: absolute;
+  top: 0px;
+  left: 255px;
+  height: 460px;
+  color: #000;
+  background-color: #fff;
+  z-index: 9;
+  display: none;
+}
+#slider .dropdown .is-hover .drop-item-list{
+  display: block;
+  border: 1px solid #ccc;
+}
+#slider .dropdown .is-hover .drop-item-list img {
+  margin-right: 10px;
+}
+#slider .dropdown .drop-item{
+  cursor: pointer;
+  padding: 12px;
+}
+#slider .dropdown .drop-item:hover{
+  background-color: #FF6700;
+}
+
+#slider .dropdown .drop-item-list div {
+  padding: 18px;
+  width: 230px;
+}
+
+#slider .dropdown .drop-item-list button {
+  width: 60px;
+  height: 24px;
+  float: right;
+  color: #FF6700;
+  background-color: #fff;
+  text-align: center;
+  line-height: 24px;
+  border: 1px solid #FF6700;
+}
+
+/*产品轮播图*/
+#slider .banner-index {
+   width: 1226px;
+   height: 460px;
+   position: relative;
+}
+
+#slider .imgbox li {
+   float: left;
+   position: absolute;
+   display: none;
+}
+
+#slider .banner-index .fr{
+  display: block;
+}
+
+#slider .banner-index .btn_arrow {
+  width: 41px;
+  height: 69px;
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  margin-top: -35px;
+  background: url(../images/bannerarrow_0c926c1.png);
+  background-repeat: no-repeat;
+}
+
+#slider .banner-index .btn_prev {
+  left: 240px;
+  background-position: 0 0;
+}
+#slider .banner-index .btn_next {
+  right: 0;
+  background-position: right 0;
+}
+
+#slider .banner-index .btn_prev:hover {
+  background-position: 0 bottom;
+}
+
+#slider .banner-index .btn_next:hover {
+  background-position: right bottom;
+}
+
+#slider .banner-index .banner-num {
+  position: absolute;
+  bottom: 15px;
+  right: 500px;
+}
+
+#slider .banner-index .banner-num li {
+  width: 6px;
+  height: 6px;
+  border:2px solid rgba(255,255,255,.4);
+  border-radius: 10px;
+  background: #c3c3c3;
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+  border-color: rgba(0,0,0,.4);
+  color: #ccc;
+}
+
+#slider .banner-index .banner-num .on {
+  background: rgba(0,0,0,.4);
+}
+/* slider E*/
+
+/* main S*/
+
+#misfq li {
+      list-style: none;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+
+#misfq {
+  margin-top: 20px;
+      height: 260px;
+      overflow: hidden;
+    }
+
+#misfq ul {
+      height: 260px;
+    }
+
+#misfq li {
+      position: relative;
+      width: 175px;
+      height: 262px;
+      overflow: hidden;
+      float: left;
+    }
+
+#misfq .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+#misfq .title h3 {
+      width: 30px;
+      font: 30px/30px Microsoft Yahei;
+      color: #fff;
+      margin: 0 auto;
+      padding: 30px 0 0 0;
+    }
+
+#misfq .auto {
+      width: 100%;
+      height: 100%;
+      background: url(../images/misfq1.jpg) no-repeat center;
+    }
+#misfq .a2{
+    background: url(../images/misfq2.jpg) no-repeat center;
+}
+#misfq .a3{
+  width: 100%;
+  height: 100%;
+    background: url(../images/misfq3.jpg) no-repeat center;
+}
+#misfq .a4{
+    background: url(../images/misfq4.jpg) no-repeat center;
+}
+#misfq .a5{
+    background: url(../images/misfq5.jpg) no-repeat center;
+}
+#misfq .a6{
+    background: url(../images/misfq6.jpg) no-repeat center;
+}
+#misfq .a7{
+    background: url(../images/misfq7.jpg) no-repeat center;
+}
+#misfq  ul:hover li {
+      width: 137px;
+    }
+
+#misfq ul li:hover {
+      width: 400px;
+    }
+
+#misfq ul li:hover .title {
+      display: none;
+    }
+/* main E*/
+
+
+
+
+
+
+
+
+
