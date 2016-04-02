@@ -1,7 +1,8 @@
+/*下拉菜单对象*/
 function Dropdown(data){
    this.data = data;
    this.dom = $('<div></div>');
-}
+};
 
 Dropdown.prototype = {
     bindDOM:function(){
@@ -30,5 +31,38 @@ Dropdown.prototype = {
     init:function(){
         this.bindDOM();
         this.bindEvents();
+  }
+};
+
+/*产品对象*/
+function Product(data) {
+  this.data = data;
+  this.dom = $('<div class="select"></div>');
+}
+
+Product.prototype = {
+  bindDOM:function(){
+    var str = '';
+    str += '<div class="star">';
+    str += '<img src='+ this.data.src +' alt="">';
+    str += '<div class="tit">'+this.data.tit+'</div>';
+    str += '<div class="instruction">'+this.data.inst+'</div>';
+    str += '<p class="price">'+this.data.price+'</p>';
+    str += '</div>';
+    var container = $('#mistar .starslider');
+    this.dom.html(str).appendTo(container);
+    // $('#mistar .starslider').append(str);
+  },
+  bindEvents:function(){
+    var that = this;
+    that.dom.on({mouseenter:function(){
+      $(this).addClass('current').siblings().removeClass('current');
+    },mouseleave:function(){
+      $(this).removeClass('current');
+    }});
+  },
+  init:function(){
+    this.bindDOM();
+    this.bindEvents();
   }
 }
