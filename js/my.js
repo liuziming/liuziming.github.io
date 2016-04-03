@@ -201,23 +201,4 @@ window.onload = function() {
             },function(){ flag = true; })
         }
     }
-
-    // go
-      /*  width:400,
-        top:20,
-        left:750,
-        opacity:20,
-        z:2*/
-   /* // 给每个图片 5个 json
-    for(var i=0;i<json.length;i++) {
-        animate(lis[i],{
-            width: json[i].width,
-            top: json[i].top,
-            left: json[i].left,
-            opacity: json[i].opacity,
-            zIndex: json[i].z
-        })
-    }*/
-
-
 }

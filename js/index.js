@@ -2,7 +2,7 @@
 (function skip() {
   var skip = document.getElementById("skip");
   var demo = document.getElementById("demos");
-  var num = 1;
+  var num = 3;
   goIndexPage();
   function goIndexPage() {
     demo.innerHTML = num+"秒后进入小米网</a>";
