@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>小米官网</title>
+        <title>小米网</title>
         <link rel="shortcut icon" href="images/xiaomiicon.png">
         <link rel="stylesheet" href="css/xiaomi.css">
     </head>
@@ -16,11 +16,15 @@
           </div>
       </div><![endif]-->
     <!-- header S -->
+
+    <!-- 自动跳转-->
     <div id="skip">
       <img src="images/mifan.png" alt="" class="mifan">
       <img src="images/mifans.png" height="210" width="844" alt="" class="mifans">
       <div id="demos"></div>
     </div>
+
+    <!--音乐导航-->
     <div id="music">
       <nav>
           <ul>
@@ -43,6 +47,8 @@
       <audio src="music/7.ogg"></audio>
       <audio src="music/8.ogg"></audio>
     </div>
+
+    <!--顶部导航-->
     <header id="header" class="header">
       <div class="top-bar clearfix">
        <div class="w  clearfix">
@@ -153,9 +159,11 @@
 
     <!-- slider S -->
     <div class="w" id="slider">
+      <!-- 下拉菜单 -->
        <div class="dropdown">
 
        </div>
+      <!-- 轮播图 -->
         <div class="banner-index" id="banner-slide">
              <div class="imgLodding">
                <ul class="imgbox">
@@ -180,6 +188,7 @@
     <!-- slider E -->
 
     <!-- Main S -->
+      <!--手风琴-->
     <div id="misfq" class="w">
     <ul>
       <li>
@@ -227,19 +236,49 @@
     </ul>
   </div>
 
-    <div id="mistar" class="mistar w">
-     <h2>小米明星单品</h2>
-     <div class="control">
-       <span class="left"><</span>
-       <span class="right">></span>
-     </div>
-      <div class="starslider">
+    <div id="main">
+      <!--明星产品-->
+      <div id="mistar" class="mistar w">
+        <h2>小米明星单品</h2>
+        <div class="control">
+          <span class="left"><</span>
+          <span class="right">></span>
+        </div>
+        <div class="starpro">
 
+        </div>
+      </div>
+
+      <!--智能硬件-->
+      <div id="power" class="w">
+        <h2>智能硬件</h2>
+          <img src="images/mair.jpg" alt="" class="air">
+      </div>
+
+      <!--搭配-->
+      <div id="pei" class="w">
+       <h2>搭配</h2>
+        <div class="yidong">
+          <img src="images/peiyidong.jpg" alt="">
+        </div>
+        <div class="xingli">
+          <img src="images/peixingli.jpg" alt="">
+        </div>
+        <ul class="tab">
+          <li class="show">热门</li>
+          <li>耳机音响</li>
+          <li>电源</li>
+          <li>电池存储卡</li>
+        </ul>
+        <div class="peipro">
+          <div class="lis hot show"></div>
+          <div class="lis sound"></div>
+          <div class="lis yuan"></div>
+          <div class="lis card"></div>
+        </div>
       </div>
     </div>
-
     <!-- Main E -->
-
 
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/xiaomi.js"></script>

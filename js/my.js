@@ -1,6 +1,103 @@
-/**
- * Created by andy on 2015/12/12.
- */
+/*弹出层*/
+(function layer() {
+  var mcanvas = document.getElementById("mcanvas");
+  function mrandom (begin, end) {
+    return Math.floor(Math.random() * (end - begin)) + begin;
+  };
+  var Box = function(){
+    // 随机生成一个img,然后随机移动,当移动到边界就随机再移动到别的位置
+    this.dom = document.createElement('img');
+    this.x = 400;
+    this.y = 230;
+    //物体运用偏移量
+    this.vx = mrandom(1,12);
+    this.vy =mrandom(1,12);
+    this.timeBar = null;
+  };
+  Box.prototype = {
+    add:function() {
+      var that = this;
+      //默认添加
+      that._draw();
+      //添加到容器中
+      mcanvas.appendChild(this.dom);
+      //让物体循环移动,生命周期: 诞生,游离,结束
+      that.timeBar = setInterval(function(){
+        that._draw();
+      }, 33);
+    },
+    //每次循环重画物体位置
+    _draw : function(){
+      this.x += this.vx;
+      this.y += this.vy;
+
+//        检测是否超标
+      //同样校验以后可能会变化,就是可能的变化或者已经知道的变化
+      if(this.x > 730){
+        //当移动位置超越最大,就将left的值设置为1000
+        this.x = 730;
+        this.vx *= -1;
+      }
+      if(this.y > 430){
+        this.y = 430;
+        //当物体的y值大于边界 则等于边界
+        this.vy *= -1;
+      }
+//        改变物体位置
+      this.dom.style.left = this.x + 'px';
+      this.dom.style.top = this.y + 'px';
+    }
+  };
+  var first = function(){
+    Box.call(this);//拥有 x y vx vy属性
+    this.dom.setAttribute('src','images/bird (1).png');
+  };
+  first.prototype = new Box();
+  var second = function(){
+    Box.call(this);
+    this.dom.setAttribute('src','images/bird (2).png');
+  };
+  second.prototype = Box.prototype;
+
+  var third = function(){
+    Box.call(this);
+    this.dom.setAttribute('src','images/bird (3).png');
+  };
+  third.prototype = new Box();
+
+  var fourth = function(){
+    Box.call(this);
+    this.dom.setAttribute('src','images/bird (4).png');
+  };
+  fourth.prototype = Box.prototype;
+  var five = function(){
+    Box.call(this);
+    this.dom.setAttribute('src','images/bird (5).png');
+  };
+  five.prototype = new Box();
+  var AllBox = [Box, first, second, third, fourth, five];
+
+  var ltimer = setInterval(function(){
+    var box = new AllBox[mrandom(0,6)]();
+    box.add();
+  }, 300);
+  var num = 5;
+  goIndexPage();
+  function goIndexPage() {
+    num--;
+    if(num >= 0) {
+      setTimeout(goIndexPage,1000);  // 从新调用自己
+    }
+    else {
+      $("#layer").slideUp();
+      clearInterval(ltimer);
+    }
+    $("#mclose").click(function () {
+      $("#layer").slideUp();
+      clearInterval(ltimer);
+    });
+  };
+})()
 window.onload = function() {
     var arrow = document.getElementById("arrow");  // 三角
     var wrap = document.getElementById("wrap");   // 大盒子

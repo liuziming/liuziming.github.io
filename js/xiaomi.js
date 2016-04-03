@@ -35,27 +35,29 @@ Dropdown.prototype = {
 };
 
 /*产品对象*/
-function Product(data) {
+function  Product(data,container) {
   this.data = data;
-  this.dom = $('<div class="select"></div>');
+  this.container = container;
 }
 
 Product.prototype = {
   bindDOM:function(){
     var str = '';
-    str += '<div class="star">';
+    str += '<div class="product">';
+    str += '<div class="ad">';
+    str += '</div>';
     str += '<img src='+ this.data.src +' alt="">';
     str += '<div class="tit">'+this.data.tit+'</div>';
     str += '<div class="instruction">'+this.data.inst+'</div>';
     str += '<p class="price">'+this.data.price+'</p>';
+    str += '<div class="bot">';
     str += '</div>';
-    var container = $('#mistar .starslider');
-    this.dom.html(str).appendTo(container);
-    // $('#mistar .starslider').append(str);
+    str += '</div>';
+    this.container.append(str);
   },
   bindEvents:function(){
     var that = this;
-    that.dom.on({mouseenter:function(){
+    that.container.find(".product").on({mouseenter:function(){
       $(this).addClass('current').siblings().removeClass('current');
     },mouseleave:function(){
       $(this).removeClass('current');
