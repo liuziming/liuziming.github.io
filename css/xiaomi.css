@@ -2,7 +2,7 @@
 * @Author: 流年
 * @Date:   2016-03-30 21:58:41
 * @Last Modified by:   Mine
-* @Last Modified time: 2016-04-01 20:04:20
+* @Last Modified time: 2016-04-03 21:21:41
 */
 /*
  * CSS初始化
@@ -311,7 +311,7 @@ a {
 #slider .dropdown .drop-item-list{
   position: absolute;
   top: 0px;
-  left: 255px;
+  left: 240px;
   height: 460px;
   color: #000;
   background-color: #fff;
