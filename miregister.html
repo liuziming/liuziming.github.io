@@ -132,7 +132,7 @@
   <script>
     // 全局配置，优先级不高
     $.ajaxSetup({
-      timeout: 3000
+      timeout: 5000
     });
 
     // 点击提交表单
@@ -170,7 +170,7 @@
           if(data.code != 10000) {
             alert('注册失败');
           } else {
-            location.href = 'http://www.ailvxing.com';
+            location.href = 'http://liuziming.github.io/xiaomi.html;
           }
 
         },
@@ -194,7 +194,7 @@
       var val = $('.mobile').val();
 
       $.ajax({
-        url: './getCode.php',
+        url: 'http://liuziming.github.io/mgetCode.php',
         type: 'post',
         dataType: 'json',
         data: {mobile: val},
