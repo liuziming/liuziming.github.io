@@ -149,7 +149,7 @@
 
       $.ajax({
         // 下面URL就叫做接口
-        url: 'http://liuziming.github.io/miregister.php',
+        url: './miregister.php',
         type: 'post',
         dataType: 'json',
         data: formData,
@@ -193,7 +193,7 @@
       var val = $('.mobile').val();
 
       $.ajax({
-        url: 'http://liuziming.github.io/mgetCode.php',
+        url: './mgetCode.php',
         type: 'post',
         dataType: 'json',
         data: {mobile: val},
